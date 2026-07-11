@@ -3,164 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnyTone Download Center</title>
+    <title>AnyTone | Download Center</title>
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
+            --bg-canvas: #f6f8fa;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(226, 232, 240, 0.8);
             --brand-red: #ef4444;
-            --btn-bg: #1e293b;
-            --card-border: #e2e8f0;
+            --btn-dark: #0f172a;
+            --btn-dark-hover: #1e293b;
+            --btn-light: #f1f5f9;
+            --btn-light-hover: #e2e8f0;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-canvas);
             color: var(--text-main);
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* 顶部 Logo 与标语区 */
+        /* 💡 高级环境背景光效果 */
+        body::before {
+            content: "";
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.08) 0%, rgba(99, 102, 241, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
         .header {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
+            z-index: 1;
             padding: 0 20px;
         }
 
         .header h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .header p {
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 16px;
             margin-top: 0;
+            font-weight: 400;
+            letter-spacing: -0.2px;
         }
 
-        /* 🔍 核心：高逼格搜索框（产品再多也不怕） */
+        /* 🔍 全数字/英文自由键盘搜索框 */
         .search-container {
             width: 90%;
-            max-width: 500px;
-            margin: 20px 0 40px 0;
+            max-width: 540px;
+            margin: 30px 0 50px 0;
+            z-index: 1;
+            position: relative;
         }
 
         .search-input {
             width: 100%;
-            padding: 14px 20px;
+            padding: 16px 24px;
             font-size: 16px;
-            border: 1px solid var(--card-border);
-            border-radius: 30px;
+            font-weight: 400;
+            color: var(--text-main);
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
             outline: none;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
             box-sizing: border-box;
         }
 
         .search-input:focus {
-            border-color: var(--text-main);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #94a3b8;
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 0 0 4px rgba(15, 23, 42, 0.05);
+            transform: scale(1.01);
         }
 
-        /* 产品卡片网格布局 */
+        /* 网格卡片容器 */
         .grid-container {
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
-            padding-bottom: 60px;
+            gap: 24px;
+            padding-bottom: 80px;
+            z-index: 1;
         }
 
-        @media (min-width: 600px) {
+        @media (min-width: 650px) {
             .grid-container {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        /* 单个产品卡片设计 */
+        /* 产品卡片磨砂玻璃微悬浮特效 */
         .product-card {
-            background: #ffffff;
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-smooth);
         }
 
         .product-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(15, 23, 42, 0.15);
         }
 
         .product-info h3 {
-            margin: 0 0 6px 0;
-            font-size: 18px;
-            font-weight: 600;
+            margin: 0 0 8px 0;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .product-info .tag {
             display: inline-block;
-            font-size: 12px;
-            background: #f1f5f9;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: #e2e8f0;
             color: var(--text-muted);
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin-bottom: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 20px;
         }
 
-        /* 极简双按钮设计 */
+        /* 响应式多按钮自适应换行排列 */
         .btn-group {
             display: flex;
             gap: 10px;
-            margin-top: 20px;
+            margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .btn {
             flex: 1;
+            min-width: 100px;
             text-align: center;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 500;
-            padding: 10px 0;
-            border-radius: 8px;
-            transition: background 0.2s;
+            font-weight: 600;
+            padding: 12px 6px;
+            border-radius: 10px;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-sizing: border-box;
         }
 
         .btn-manual {
-            background-color: #f1f5f9;
+            background-color: var(--btn-light);
             color: var(--text-main);
         }
 
         .btn-manual:hover {
-            background-color: #e2e8f0;
+            background-color: var(--btn-light-hover);
         }
 
         .btn-software {
-            background-color: var(--btn-bg);
+            background-color: var(--btn-dark);
             color: #ffffff;
         }
 
         .btn-software:hover {
-            background-color: #0f172a;
+            background-color: var(--btn-dark-hover);
         }
 
-        /* 无搜索结果时的提示 */
         .no-results {
             text-align: center;
             color: var(--text-muted);
             grid-column: 1 / -1;
-            padding: 40px 0;
+            padding: 60px 0;
+            font-size: 15px;
             display: none;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -168,16 +223,16 @@
 
     <div class="header">
         <h1>AnyTone</h1>
-        <p>Firmware, Software & Manual Downloads</p>
+        <p>Resource Download Center</p>
     </div>
 
     <div class="search-container">
-        <input type="text" id="searchInput" class="search-input" placeholder="Search your radio model... (e.g. AT-5000)" onkeyup="filterProducts()">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search by model or keywords... (e.g. 5000, 168, max)" onkeyup="filterProducts()">
     </div>
 
     <div class="grid-container" id="productGrid">
         
-        <div class="product-card" data-model="at-5000 at5000 cb radio">
+        <div class="product-card" data-model="at-5000 at5000 5000 500 5 cb radio ssb mobile">
             <div class="product-info">
                 <h3>AT-5000</h3>
                 <span class="tag">Mobile CB Radio (SSB)</span>
@@ -188,57 +243,43 @@
             </div>
         </div>
 
-        <div class="product-card" data-model="at-d168 d168 dmr handheld">
+        <div class="product-card" data-model="at-uva1 atuva1 uva1 uv-a1 uv a1 1 handheld dual band">
+            <div class="product-info">
+                <h3>AT-UVA1</h3>
+                <span class="tag">Dual Band Handheld Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1sS2H9JbVKwyTfO2RMf0xV7iQIMFb4BaL/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/13GAYirK6cthdp2D5L65U6RiMqGngeN9n/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-model="at-588max at588max 588max 588 max 58 5 mobile vehicle high power">
+            <div class="product-info">
+                <h3>AT-588MAX</h3>
+                <span class="tag">High-Power Mobile Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1U14rXo5Gml0NlpClp6-Qzo8sJZzMZ8E4/view?usp=drive_link" class="btn btn-manual" target="_blank" style="flex: 1 1 100%;">📄 User Manual</a>
+                <a href="https://drive.google.com/file/d/1VsQI-uIQ2_hrujXzNsgmg2LcoIwq10Yn/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software 1</a>
+                <a href="https://drive.google.com/file/d/1jamzmP1vHtiwTO__pP6ikVoOT1yqfoc2/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software 2</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-model="at-d168-4pack d168-4pack d168 4pack 4 pack multi dmr digital">
+            <div class="product-info">
+                <h3>AT-D168 (4-PACK)</h3>
+                <span class="tag">Multi-Pack DMR Digital Handheld</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1MQHK8v0mWQhafHdMMumvEkp2Qp8KyVcB/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 User Manual</a>
+            </div>
+        </div>
+
+        <div class="product-card" data-model="at-d168 atd168 d168 168 16 1 dmr handheld digital">
             <div class="product-info">
                 <h3>AT-D168</h3>
-                <span class="tag">DMR Handheld Radio</span>
+                <span class="tag">DMR Digital Handheld Radio</span>
             </div>
             <div class="btn-group">
-                <a href="https://drive.google.com/file/d/1MQHK8v0mWQhafHdMMumvEkp2Qp8KyVcB/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
-                <a href="https://drive.google.com/file/d/1zwPKg0ZGlB7P6mFy5TLcdtN9f5-GclRG/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
-            </div>
-        </div>
-
-        <div class="product-card" data-model="at-518plus 518plus v5 gmrs frs">
-            <div class="product-info">
-                <h3>AT-518Plus (V5)</h3>
-                <span class="tag">GMRS/FRS Handheld Radio</span>
-            </div>
-            <div class="btn-group">
-                <a href="你的谷歌网盘518说明书链接" class="btn btn-manual" target="_blank">📄 Manual</a>
-                <a href="你的谷歌网盘518写频软件链接" class="btn btn-software" target="_blank">💻 Software</a>
-            </div>
-        </div>
-
-        <div class="no-results" id="noResults">No models found. Please check your spelling.</div>
-
-    </div>
-
-    <script>
-        function filterProducts() {
-            var input = document.getElementById('searchInput');
-            var filter = input.value.toLowerCase();
-            var grid = document.getElementById('productGrid');
-            var cards = grid.getElementsByClassName('product-card');
-            var noResults = document.getElementById('noResults');
-            var hasVisibleCard = false;
-
-            for (var i = 0; i < cards.length; i++) {
-                var modelData = cards[i].getAttribute('data-model');
-                if (modelData.indexOf(filter) > -1) {
-                    cards[i].style.display = "flex";
-                    hasVisibleCard = true;
-                } else {
-                    cards[i].style.display = "none";
-                }
-            }
-
-            if (hasVisibleCard) {
-                noResults.style.display = "none";
-            } else {
-                noResults.style.display = "block";
-            }
-        }
-    </script>
-</body>
-</html>
+                <a href="https://drive.google.com/file/d/1xm96uJ0evxJBZWBfndeSyjpEHzxo5IkM/view?usp=drive_link" class="btn btn-manual"
