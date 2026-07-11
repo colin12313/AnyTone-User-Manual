@@ -35,7 +35,7 @@
             position: relative;
         }
 
-        /* 💡 高级环境背景光效果 */
+        /* 💡 顶部流光环境光特效 */
         body::before {
             content: "";
             position: absolute;
@@ -75,7 +75,7 @@
             letter-spacing: -0.2px;
         }
 
-        /* 🔍 全数字/英文自由键盘搜索框 */
+        /* 🔍 搜索框容器（全面解锁全键盘输入限制） */
         .search-container {
             width: 90%;
             max-width: 540px;
@@ -107,7 +107,7 @@
             transform: scale(1.01);
         }
 
-        /* 网格卡片容器 */
+        /* 网格布局 */
         .grid-container {
             width: 90%;
             max-width: 900px;
@@ -124,7 +124,7 @@
             }
         }
 
-        /* 产品卡片磨砂玻璃微悬浮特效 */
+        /* 📦 磨砂玻璃卡片与悬浮特效 */
         .product-card {
             background: var(--glass-bg);
             backdrop-filter: blur(16px);
@@ -165,7 +165,7 @@
             margin-bottom: 20px;
         }
 
-        /* 响应式多按钮自适应换行排列 */
+        /* 响应式按钮组 */
         .btn-group {
             display: flex;
             gap: 10px;
@@ -232,6 +232,7 @@
 
     <div class="grid-container" id="productGrid">
         
+        <!-- 1. AT-5000 -->
         <div class="product-card" data-model="at-5000 at5000 5000 500 5 cb radio ssb mobile">
             <div class="product-info">
                 <h3>AT-5000</h3>
@@ -243,6 +244,7 @@
             </div>
         </div>
 
+        <!-- 2. UVA1 -->
         <div class="product-card" data-model="at-uva1 atuva1 uva1 uv-a1 uv a1 1 handheld dual band">
             <div class="product-info">
                 <h3>AT-UVA1</h3>
@@ -254,6 +256,7 @@
             </div>
         </div>
 
+        <!-- 3. AT-588MAX -->
         <div class="product-card" data-model="at-588max at588max 588max 588 max 58 5 mobile vehicle high power">
             <div class="product-info">
                 <h3>AT-588MAX</h3>
@@ -266,6 +269,7 @@
             </div>
         </div>
 
+        <!-- 4. D168-4PACK -->
         <div class="product-card" data-model="at-d168-4pack d168-4pack d168 4pack 4 pack multi dmr digital">
             <div class="product-info">
                 <h3>AT-D168 (4-PACK)</h3>
@@ -276,10 +280,142 @@
             </div>
         </div>
 
+        <!-- 5. D168 -->
         <div class="product-card" data-model="at-d168 atd168 d168 168 16 1 dmr handheld digital">
             <div class="product-info">
                 <h3>AT-D168</h3>
                 <span class="tag">DMR Digital Handheld Radio</span>
             </div>
             <div class="btn-group">
-                <a href="https://drive.google.com/file/d/1xm96uJ0evxJBZWBfndeSyjpEHzxo5IkM/view?usp=drive_link" class="btn btn-manual"
+                <a href="https://drive.google.com/file/d/1xm96uJ0evxJBZWBfndeSyjpEHzxo5IkM/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/1zwPKg0ZGlB7P6mFy5TLcdtN9f5-GclRG/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <!-- 6. AT-D878S -->
+        <div class="product-card" data-model="at-d878s atd878s at-878s at878s 878s 878 87 8 dmr digital">
+            <div class="product-info">
+                <h3>AT-D878S</h3>
+                <span class="tag">Premium DMR Handheld Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1UuLG31CprzwmjvVoPkIZPlsvOdSVT7-W/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/1MzqBtmAvbxNoWwwSlVOkSqBs0GxxhiTW/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <!-- 7. AT-5100 -->
+        <div class="product-card" data-model="at-5100 at5100 5100 510 51 5 mobile radio vehicle">
+            <div class="product-info">
+                <h3>AT-5100</h3>
+                <span class="tag">Mobile Vehicle Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1_rMcC_WhDJQq-ZwV3VoznWQhbjc2Ez5d/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/1KVwYnc1bO40Yf6DlaaqRMGK5Otv_TEWV/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <!-- 8. AT-5289Ⅱ -->
+        <div class="product-card" data-model="at-5289ii at5289ii 5289ii 5289 ii 2 52892 cb radio mobile">
+            <div class="product-info">
+                <h3>AT-5289Ⅱ</h3>
+                <span class="tag">Mobile CB Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1OLruUVJaOSWCkc6rnlN879_VuxjGPoOV/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/11i8lxoQw-qAV4Nhi1bSjFXlOFoEwZaYb/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <!-- 9. AT-518PLUS -->
+        <div class="product-card" data-model="at-518plus at518 518plus 518 51 5 v5 gmrs frs handheld">
+            <div class="product-info">
+                <h3>AT-518PLUS (V5)</h3>
+                <span class="tag">GMRS/FRS Handheld Radio</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1pG6cnMq4wJ5GfEcbmsnAUAcoF8DZygmU/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 Manual</a>
+                <a href="https://drive.google.com/file/d/1g8RF0kjmChkDsSn1pIHTW-sFr7Le3SDP/view?usp=drive_link" class="btn btn-software" target="_blank">💻 Software</a>
+            </div>
+        </div>
+
+        <!-- 10. AT-518PLUS-4PACK -->
+        <div class="product-card" data-model="at-518plus-4pack 518plus 4pack 4 pack multi gmrs frs v5">
+            <div class="product-info">
+                <h3>AT-518PLUS (4-PACK)</h3>
+                <span class="tag">Multi-Pack GMRS/FRS Handheld</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/14QMMcpJuoQ0ykNstXFSKGrKOtc0Wt-0J/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 User Manual</a>
+            </div>
+        </div>
+
+        <!-- 11. AT-B3 -->
+        <div class="product-card" data-model="at-b3 atb3 b3 b 3 handheld radio wireless">
+            <div class="product-info">
+                <h3>AT-B3</h3>
+                <span class="tag">Handheld Transceiver</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1RZlcdaRhCoNY-Kr_TQXJJ1v1f5-0Fxu-/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 User Manual</a>
+            </div>
+        </div>
+
+        <!-- 12. SUPER-PTT -->
+        <div class="product-card" data-model="super-ptt superptt ptt super mic accessory button">
+            <div class="product-info">
+                <h3>SUPER-PTT</h3>
+                <span class="tag">Radio System Accessory</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1KGjQxlcPDzdd8jlujtmHCvEB71vJEI2y/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 User Manual</a>
+            </div>
+        </div>
+
+        <!-- 13. AT-500MⅡ -->
+        <div class="product-card" data-model="at-500mii at500mii 500mii 500 mii 500m2 500m mobile radio">
+            <div class="product-info">
+                <h3>AT-500MⅡ</h3>
+                <span class="tag">Mobile Vehicle Transceiver</span>
+            </div>
+            <div class="btn-group">
+                <a href="https://drive.google.com/file/d/1AM-8GejMnaIIg5nfuLnVl3_W1SjpgbRo/view?usp=drive_link" class="btn btn-manual" target="_blank">📄 User Manual</a>
+            </div>
+        </div>
+
+        <!-- 动态未匹配提示区 -->
+        <div class="no-results" id="noResults">✨ No matching models found. Try checking the number!</div>
+
+    </div>
+
+    <!-- 🧠 修正后的实时动态检索算法 -->
+    <script>
+        function filterProducts() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toLowerCase().trim();
+            var grid = document.getElementById('productGrid');
+            var cards = grid.getElementsByClassName('product-card');
+            var noResults = document.getElementById('noResults');
+            var hasVisibleCard = false;
+
+            for (var i = 0; i < cards.length; i++) {
+                var modelData = cards[i].getAttribute('data-model');
+                // 🛠️ 彻底修正 .style.style.display 报错，回归标准的原生写法
+                if (modelData.indexOf(filter) > -1) {
+                    cards[i].style.display = "flex";
+                    hasVisibleCard = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            if (hasVisibleCard) {
+                noResults.style.display = "none";
+            } else {
+                noResults.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
