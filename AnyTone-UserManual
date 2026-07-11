@@ -9,16 +9,17 @@
             --bg-canvas: #f8fafc;
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(226, 232, 240, 0.8);
             --img-container-bg: #f1f5f9;
-            --btn-dark: #0f172a;
-            --btn-dark-hover: #1e293b;
-            --btn-light: #f1f5f9;
-            --btn-light-hover: #e2e8f0;
             
-            /* ✨ 核心：高级环境高亮特效光晕参数 */
-            --glow-highlight: rgba(15, 23, 42, 0.08);
+            /* 🔵 注入的专属高级科技蓝色彩体系 */
+            --brand-blue: #2563eb;          /* 主色调：高亮科技蓝 */
+            --brand-blue-hover: #1d4ed8;    /* 悬浮色：深邃海浪蓝 */
+            --tag-blue-bg: #e0f2fe;         /* 标签底色：浅冰蓝 */
+            --tag-blue-text: #0369a1;       /* 标签文字：数码蓝 */
+            --glow-highlight: rgba(37, 99, 235, 0.08); /* 悬浮时的蓝色环境光晕 */
+            
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
             --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -37,7 +38,7 @@
             position: relative;
         }
 
-        /* 顶部科技感流光微渐变 */
+        /* 🔵 顶部高级科技蓝流光微渐变特效 */
         body::before {
             content: "";
             position: absolute;
@@ -46,7 +47,7 @@
             transform: translateX(-50%);
             width: 1000px;
             height: 500px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, rgba(239, 68, 68, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(99, 102, 241, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
             filter: blur(80px);
             z-index: 0;
             pointer-events: none;
@@ -60,13 +61,20 @@
             padding: 0 20px;
         }
 
-        /* 👑 优化：Logo专属高级定位 */
+        /* 📐 核心重构：完美适配正方形 Logo 的 App Icon 式高级规格 */
         .brand-logo {
-            max-height: 48px;
-            width: auto;
-            object-fit: contain;
+            width: 64px;
+            height: 64px;
+            object-fit: cover;
+            border-radius: 14px;
             margin-bottom: 16px;
-            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+            box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.15), 0 1px 2px rgba(0,0,0,0.05);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: var(--transition-smooth);
+        }
+        
+        .brand-logo:hover {
+            transform: scale(1.03) rotate(2deg);
         }
 
         .header h1 {
@@ -74,7 +82,7 @@
             font-weight: 800;
             margin: 0 0 8px 0;
             letter-spacing: -1px;
-            background: linear-gradient(135deg, #0f172a 0%, #475569 100%);
+            background: linear-gradient(135deg, #0f172a 0%, var(--brand-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -111,10 +119,10 @@
             box-sizing: border-box;
         }
 
-        /* 搜索框激活时的高亮发光圈 */
+        /* 搜索框激活时锁定科技蓝光圈 */
         .search-input:focus {
-            border-color: #0f172a;
-            box-shadow: 0 12px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 4px rgba(15, 23, 42, 0.04);
+            border-color: var(--brand-blue);
+            box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.1), 0 0 0 4px rgba(37, 99, 235, 0.05);
             transform: translateY(-1px);
         }
 
@@ -135,7 +143,7 @@
             }
         }
 
-        /* 📦 产品卡片结构重构 */
+        /* 产品卡片结构 */
         .product-card {
             background: var(--glass-bg);
             backdrop-filter: blur(16px);
@@ -149,14 +157,14 @@
             transition: var(--transition-smooth);
         }
 
-        /* ✨ 核心高亮：悬浮时的环境微光与边缘锐化特效 */
+        /* 🔵 核心高亮：悬浮时的冰晶蓝动态环境发光特效 */
         .product-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(15, 23, 42, 0.25);
-            box-shadow: 0 30px 40px -15px var(--glow-highlight), 0 0 0 1px rgba(15, 23, 42, 0.02);
+            border-color: rgba(37, 99, 235, 0.3);
+            box-shadow: 0 30px 40px -15px var(--glow-highlight), 0 0 0 1px rgba(37, 99, 235, 0.03);
         }
 
-        /* 🖼️ 新增：产品图片高级视窗 */
+        /* 产品图片视窗容器 */
         .product-img-wrapper {
             width: 100%;
             height: 180px;
@@ -171,7 +179,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* 悬浮卡片时，图片享受细腻的轻微放大特效 */
         .product-card:hover .product-img-wrapper img {
             transform: scale(1.04);
         }
@@ -196,20 +203,21 @@
             letter-spacing: -0.5px;
         }
 
+        /* 🔵 优化：浅蓝底深蓝字的高级胶囊标签样式 */
         .product-info .tag {
             align-self: flex-start;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.3px;
-            background: #e2e8f0;
-            color: var(--text-muted);
+            background: var(--tag-blue-bg);
+            color: var(--tag-blue-text);
             padding: 4px 10px;
             border-radius: 6px;
             margin-bottom: 20px;
         }
 
-        /* 响应式多按钮底座 */
+        /* 响应式双按钮底座 */
         .btn-group {
             display: flex;
             gap: 10px;
@@ -243,13 +251,15 @@
             background-color: var(--btn-light-hover);
         }
 
+        /* 🔵 主按钮：纯正科技深蓝 */
         .btn-software {
-            background-color: var(--btn-dark);
+            background-color: var(--brand-blue);
             color: #ffffff;
         }
 
         .btn-software:hover {
-            background-color: var(--btn-dark-hover);
+            background-color: var(--brand-blue-hover);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
         .no-results {
@@ -266,7 +276,7 @@
 <body>
 
     <div class="header">
-        <img src="https://via.placeholder.com/180x50?text=AnyTone+Logo" alt="AnyTone Logo" class="brand-logo">
+        <img src="https://drive.google.com/uc?export=view&id=1oyejLialH1zBy_unuTYNCipegXY-6FjR" alt="AnyTone Logo" class="brand-logo">
         <h1>Resource Center</h1>
         <p>Firmware, Software & User Manuals</p>
     </div>
@@ -463,3 +473,27 @@
         function filterProducts() {
             var input = document.getElementById('searchInput');
             var filter = input.value.toLowerCase().trim();
+            var grid = document.getElementById('productGrid');
+            var cards = grid.getElementsByClassName('product-card');
+            var noResults = document.getElementById('noResults');
+            var hasVisibleCard = false;
+
+            for (var i = 0; i < cards.length; i++) {
+                var modelData = cards[i].getAttribute('data-model');
+                if (modelData.indexOf(filter) > -1) {
+                    cards[i].style.display = "flex";
+                    hasVisibleCard = true;
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+
+            if (hasVisibleCard) {
+                noResults.style.display = "none";
+            } else {
+                noResults.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
