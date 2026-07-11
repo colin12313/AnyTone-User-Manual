@@ -13,13 +13,18 @@
             --glass-border: rgba(226, 232, 240, 0.8);
             --img-container-bg: #f1f5f9;
             
-            /* 🔵 注入的专属高级科技蓝色彩体系 */
-            --brand-blue: #2563eb;          /* 主色调：高亮科技蓝 */
-            --brand-blue-hover: #1d4ed8;    /* 悬浮色：深邃海浪蓝 */
+            /* 🔵 注入的全新明亮科技蓝色彩体系 */
+            --brand-blue: #3b82f6;          /* 主色调：清爽明亮科技蓝 */
+            --brand-blue-hover: #2563eb;    /* 悬浮色：标准数码蓝 */
             --tag-blue-bg: #e0f2fe;         /* 标签底色：浅冰蓝 */
             --tag-blue-text: #0369a1;       /* 标签文字：数码蓝 */
-            --glow-highlight: rgba(37, 99, 235, 0.08); /* 悬浮时的蓝色环境光晕 */
             
+            /* 📄 Manual 专属彩色配置 */
+            --btn-manual-bg: #dbeafe;       /* 说明书底色：轻商务蓝 */
+            --btn-manual-text: #1e40af;     /* 说明书文字：深海蓝 */
+            --btn-manual-hover: #bfdbfe;    /* 说明书悬浮色 */
+            
+            --glow-highlight: rgba(59, 130, 246, 0.1); /* 悬浮时的蓝色环境光晕 */
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
             --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -38,7 +43,7 @@
             position: relative;
         }
 
-        /* 🔵 顶部高级科技蓝流光微渐变特效 */
+        /* 顶部高级科技蓝流光微渐变特效 */
         body::before {
             content: "";
             position: absolute;
@@ -47,7 +52,7 @@
             transform: translateX(-50%);
             width: 1000px;
             height: 500px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(99, 102, 241, 0.03) 50%, rgba(255, 255, 255, 0) 100%);
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.04) 50%, rgba(255, 255, 255, 0) 100%);
             filter: blur(80px);
             z-index: 0;
             pointer-events: none;
@@ -61,20 +66,20 @@
             padding: 0 20px;
         }
 
-        /* 📐 核心重构：完美适配正方形 Logo 的 App Icon 式高级规格 */
+        /* 📐 正方形 Logo 完美适配 App Icon 规格 */
         .brand-logo {
-            width: 64px;
-            height: 64px;
+            width: 68px;
+            height: 68px;
             object-fit: cover;
-            border-radius: 14px;
+            border-radius: 16px;
             margin-bottom: 16px;
-            box-shadow: 0 8px 16px -4px rgba(37, 99, 235, 0.15), 0 1px 2px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.2), 0 1px 2px rgba(0,0,0,0.05);
             border: 1px solid rgba(226, 232, 240, 0.8);
             transition: var(--transition-smooth);
         }
         
         .brand-logo:hover {
-            transform: scale(1.03) rotate(2deg);
+            transform: scale(1.04) rotate(2deg);
         }
 
         .header h1 {
@@ -95,7 +100,7 @@
             letter-spacing: -0.2px;
         }
 
-        /* 🔍 搜索框高亮特效升级 */
+        /* 🔍 搜索框全键盘自由解锁 */
         .search-container {
             width: 90%;
             max-width: 540px;
@@ -119,10 +124,9 @@
             box-sizing: border-box;
         }
 
-        /* 搜索框激活时锁定科技蓝光圈 */
         .search-input:focus {
             border-color: var(--brand-blue);
-            box-shadow: 0 12px 30px -5px rgba(37, 99, 235, 0.1), 0 0 0 4px rgba(37, 99, 235, 0.05);
+            box-shadow: 0 12px 30px -5px rgba(59, 130, 246, 0.15), 0 0 0 4px rgba(59, 130, 246, 0.05);
             transform: translateY(-1px);
         }
 
@@ -157,11 +161,11 @@
             transition: var(--transition-smooth);
         }
 
-        /* 🔵 核心高亮：悬浮时的冰晶蓝动态环境发光特效 */
+        /* 悬浮时的蓝色发光特效 */
         .product-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(37, 99, 235, 0.3);
-            box-shadow: 0 30px 40px -15px var(--glow-highlight), 0 0 0 1px rgba(37, 99, 235, 0.03);
+            border-color: rgba(59, 130, 246, 0.35);
+            box-shadow: 0 30px 45px -15px var(--glow-highlight), 0 0 0 1px rgba(59, 130, 246, 0.02);
         }
 
         /* 产品图片视窗容器 */
@@ -184,8 +188,8 @@
         }
 
         .product-img-wrapper img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 92%;
+            max-height: 92%;
             object-fit: contain;
             transition: var(--transition-smooth);
         }
@@ -203,7 +207,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* 🔵 优化：浅蓝底深蓝字的高级胶囊标签样式 */
         .product-info .tag {
             align-self: flex-start;
             font-size: 11px;
@@ -217,7 +220,7 @@
             margin-bottom: 20px;
         }
 
-        /* 响应式双按钮底座 */
+        /* 按钮组 */
         .btn-group {
             display: flex;
             gap: 10px;
@@ -231,8 +234,8 @@
             text-align: center;
             text-decoration: none;
             font-size: 13px;
-            font-weight: 600;
-            padding: 12px 6px;
+            font-weight: 700;
+            padding: 13px 6px;
             border-radius: 12px;
             transition: var(--transition-smooth);
             display: flex;
@@ -242,16 +245,18 @@
             box-sizing: border-box;
         }
 
+        /* 📄 Manual 按钮高亮彩色升级 */
         .btn-manual {
-            background-color: var(--btn-light);
-            color: var(--text-main);
+            background-color: var(--btn-manual-bg);
+            color: var(--btn-manual-text);
         }
 
         .btn-manual:hover {
-            background-color: var(--btn-light-hover);
+            background-color: var(--btn-manual-hover);
+            box-shadow: 0 4px 10px rgba(30, 64, 175, 0.1);
         }
 
-        /* 🔵 主按钮：纯正科技深蓝 */
+        /* 💻 Software 按钮换装清爽明亮蓝 */
         .btn-software {
             background-color: var(--brand-blue);
             color: #ffffff;
@@ -259,7 +264,7 @@
 
         .btn-software:hover {
             background-color: var(--brand-blue-hover);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
         }
 
         .no-results {
@@ -276,7 +281,7 @@
 <body>
 
     <div class="header">
-        <img src="https://drive.google.com/uc?export=view&id=1oyejLialH1zBy_unuTYNCipegXY-6FjR" alt="AnyTone Logo" class="brand-logo">
+        <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1oyejLialH1zBy_unuTYNCipegXY-6FjR" alt="AnyTone Logo" class="brand-logo">
         <h1>Resource Center</h1>
         <p>Firmware, Software & User Manuals</p>
     </div>
@@ -289,7 +294,7 @@
         
         <div class="product-card" data-model="at-5000 at5000 5000 500 5 cb radio ssb mobile">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-5000+Image" alt="AT-5000">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1CBa4U80_mgEHg_aHBo84W8ZVETE0KKwP" alt="AT-5000">
             </div>
             <div class="product-info">
                 <h3>AT-5000</h3>
@@ -303,7 +308,7 @@
 
         <div class="product-card" data-model="at-uva1 atuva1 uva1 uv-a1 uv a1 1 handheld dual band">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-UVA1+Image" alt="AT-UVA1">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/16AhJPz_iXT5yLmsZb4BZL7_lQbKjNoRX" alt="AT-UVA1">
             </div>
             <div class="product-info">
                 <h3>AT-UVA1</h3>
@@ -317,7 +322,7 @@
 
         <div class="product-card" data-model="at-588max at588max 588max 588 max 58 5 mobile vehicle high power">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-588MAX+Image" alt="AT-588MAX">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1SteRjXuYicwkp1s4Zr6V6NeT-PmDu87c" alt="AT-588MAX">
             </div>
             <div class="product-info">
                 <h3>AT-588MAX</h3>
@@ -332,7 +337,7 @@
 
         <div class="product-card" data-model="at-d168-4pack d168-4pack d168 4pack 4 pack multi dmr digital">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=D168+4PACK+Image" alt="AT-D168 4-PACK">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1FFRvFeGTuQM0bB8wnr42Vl4u9uVH0OdG" alt="AT-D168 4-PACK">
             </div>
             <div class="product-info">
                 <h3>AT-D168 (4-PACK)</h3>
@@ -345,7 +350,7 @@
 
         <div class="product-card" data-model="at-d168 atd168 d168 168 16 1 dmr handheld digital">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-D168+Image" alt="AT-D168">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1al7BHF0WgxLmjZeEEnU-i9vj8Ma1FBQM" alt="AT-D168">
             </div>
             <div class="product-info">
                 <h3>AT-D168</h3>
@@ -359,7 +364,7 @@
 
         <div class="product-card" data-model="at-d878s atd878s at-878s at878s 878s 878 87 8 dmr digital">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-D878S+Image" alt="AT-D878S">
+                <img src="https://via.placeholder.com/300x180/e2e8f0/64748b?text=AT-D878S" alt="AT-D878S">
             </div>
             <div class="product-info">
                 <h3>AT-D878S</h3>
@@ -373,7 +378,7 @@
 
         <div class="product-card" data-model="at-5100 at5100 5100 510 51 5 mobile radio vehicle">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-5100+Image" alt="AT-5100">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1hkMz886QFgiWkkylN_FKsAM9unSHBSbE" alt="AT-5100">
             </div>
             <div class="product-info">
                 <h3>AT-5100</h3>
@@ -387,7 +392,7 @@
 
         <div class="product-card" data-model="at-5289ii at5289ii 5289ii 5289 ii 2 52892 cb radio mobile">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-5289II+Image" alt="AT-5289Ⅱ">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1Fegh3sTPDvANLaHIUfVsSV57aqM0ciSf" alt="AT-5289Ⅱ">
             </div>
             <div class="product-info">
                 <h3>AT-5289Ⅱ</h3>
@@ -401,7 +406,7 @@
 
         <div class="product-card" data-model="at-518plus at518 518plus 518 51 5 v5 gmrs frs handheld">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-518PLUS+Image" alt="AT-518PLUS">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1FpIOeJ9YqQfEB7YXO7XOR1_dPDF0nr04" alt="AT-518PLUS">
             </div>
             <div class="product-info">
                 <h3>AT-518PLUS (V5)</h3>
@@ -415,7 +420,7 @@
 
         <div class="product-card" data-model="at-518plus-4pack 518plus 4pack 4 pack multi gmrs frs v5">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=518PLUS+4PACK+Image" alt="AT-518PLUS 4-PACK">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1C4bqQaSpKiw7VPP6pWtCJ1pyUyZRnc27" alt="AT-518PLUS 4-PACK">
             </div>
             <div class="product-info">
                 <h3>AT-518PLUS (4-PACK)</h3>
@@ -428,7 +433,7 @@
 
         <div class="product-card" data-model="at-b3 atb3 b3 b 3 handheld radio wireless">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-B3+Image" alt="AT-B3">
+                <img src="https://lazy.sh/https://lh3.googleusercontent.com/d/1M2LHYkO8D4uU0HFASzrw5kjeZyWDw1HM" alt="AT-B3">
             </div>
             <div class="product-info">
                 <h3>AT-B3</h3>
@@ -441,7 +446,7 @@
 
         <div class="product-card" data-model="super-ptt superptt ptt super mic accessory button">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=SUPER-PTT+Image" alt="SUPER-PTT">
+                <img src="https://via.placeholder.com/300x180/e2e8f0/64748b?text=SUPER-PTT" alt="SUPER-PTT">
             </div>
             <div class="product-info">
                 <h3>SUPER-PTT</h3>
@@ -454,7 +459,7 @@
 
         <div class="product-card" data-model="at-500mii at500mii 500mii 500 mii 500m2 500m mobile radio">
             <div class="product-img-wrapper">
-                <img src="https://via.placeholder.com/150?text=AT-500MII+Image" alt="AT-500MⅡ">
+                <img src="https://via.placeholder.com/300x180/e2e8f0/64748b?text=AT-500M%E2%85%A1" alt="AT-500MⅡ">
             </div>
             <div class="product-info">
                 <h3>AT-500MⅡ</h3>
