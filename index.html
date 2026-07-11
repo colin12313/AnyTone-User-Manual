@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>AnyTone | Resource Download Center</title>
     <style>
         :root {
@@ -12,47 +12,55 @@
             --glass-bg: rgba(255, 255, 255, 0.85);
             --glass-border: rgba(226, 232, 240, 0.8);
             
-            /* 🎨 图片容器底色彻底改为纯白，完美融合白底产品图 */
+            /* 🎨 图片容器纯白底色 */
             --img-container-bg: #ffffff;
             
             /* 🔵 明亮科技蓝色彩体系 */
-            --brand-blue: #3b82f6;          /* 主色调：清爽明亮科技蓝 */
-            --brand-blue-hover: #2563eb;    /* 悬浮色：标准数码蓝 */
-            --tag-blue-bg: #e0f2fe;         /* 标签底色：浅冰蓝 */
-            --tag-blue-text: #0369a1;       /* 标签文字：数码蓝 */
+            --brand-blue: #3b82f6;          
+            --brand-blue-hover: #2563eb;    
+            --tag-blue-bg: #e0f2fe;         
+            --tag-blue-text: #0369a1;       
             
             /* 📄 Manual 专属商务蓝配置 */
-            --btn-manual-bg: #dbeafe;       /* 说明书底色：轻商务蓝 */
-            --btn-manual-text: #1e40af;     /* 说明书文字：深海蓝 */
-            --btn-manual-hover: #bfdbfe;    /* 说明书悬浮色 */
+            --btn-manual-bg: #dbeafe;       
+            --btn-manual-text: #1e40af;     
+            --btn-manual-hover: #bfdbfe;    
             
-            --glow-highlight: rgba(59, 130, 246, 0.1); /* 悬浮时的蓝色环境光晕 */
+            --glow-highlight: rgba(59, 130, 246, 0.1); 
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
             --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 👑 ✅ 核心修复：锁死 html 和 body 的宽度与横向溢出，彻底消除手机端右侧空白 */
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
+            box-sizing: border-box;
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-canvas);
             color: var(--text-main);
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
             position: relative;
         }
 
-        /* 顶部高级科技蓝流光微渐变 */
+        /* 👑 ✅ 核心修复：改用 100vw 并限高限宽，防止绝对定位撑破移动端视口 */
         body::before {
             content: "";
             position: absolute;
             top: -250px;
             left: 50%;
             transform: translateX(-50%);
-            width: 1000px;
+            width: 100vw;
+            max-width: 1000px;
             height: 500px;
             background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, rgba(99, 102, 241, 0.04) 50%, rgba(255, 255, 255, 0) 100%);
             filter: blur(80px);
@@ -68,7 +76,6 @@
             padding: 0 20px;
         }
 
-        /* 大气正方形 Logo 容器排版 */
         .brand-logo {
             width: 110px; 
             height: 110px;
@@ -163,7 +170,6 @@
             transition: var(--transition-smooth);
         }
 
-        /* 悬浮全息蓝高亮 */
         .product-card:hover {
             transform: translateY(-6px);
             border-color: rgba(59, 130, 246, 0.35);
@@ -181,7 +187,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border: 1px solid #e2e8f0; /* 给纯白图建立一个弱化高级物理边框线 */
+            border: 1px solid #e2e8f0; 
             transition: var(--transition-smooth);
             box-sizing: border-box;
         }
@@ -252,7 +258,6 @@
             box-sizing: border-box;
         }
 
-        /* 📄 Manual 按钮商务蓝高亮配置 */
         .btn-manual {
             background-color: var(--btn-manual-bg);
             color: var(--btn-manual-text);
@@ -263,7 +268,6 @@
             box-shadow: 0 4px 10px rgba(30, 64, 175, 0.1);
         }
 
-        /* 💻 Software 按钮换装清爽明亮蓝 */
         .btn-software {
             background-color: var(--brand-blue);
             color: #ffffff;
@@ -299,6 +303,7 @@
 
     <div class="grid-container" id="productGrid">
         
+        <!-- 1. AT-5000 -->
         <div class="product-card" data-model="at-5000 at5000 5000 500 5 cb radio ssb mobile">
             <div class="product-img-wrapper">
                 <img src="5000.jpg" alt="AT-5000">
@@ -313,6 +318,7 @@
             </div>
         </div>
 
+        <!-- 2. UVA1 -->
         <div class="product-card" data-model="at-uva1 atuva1 uva1 uv-a1 uv a1 1 handheld dual band">
             <div class="product-img-wrapper">
                 <img src="UVA1.jpg" alt="AT-UVA1">
@@ -327,6 +333,7 @@
             </div>
         </div>
 
+        <!-- 3. AT-588MAX -->
         <div class="product-card" data-model="at-588max at588max 588max 588 max 58 5 mobile vehicle high power">
             <div class="product-img-wrapper">
                 <img src="588max.jpg" alt="AT-588MAX">
@@ -342,6 +349,7 @@
             </div>
         </div>
 
+        <!-- 4. D168-4PACK -->
         <div class="product-card" data-model="at-d168-4pack d168-4pack d168 4pack 4 pack multi dmr digital">
             <div class="product-img-wrapper">
                 <img src="d168-4pack.png" alt="AT-D168 4-PACK">
@@ -355,6 +363,7 @@
             </div>
         </div>
 
+        <!-- 5. D168 -->
         <div class="product-card" data-model="at-d168 atd168 d168 168 16 1 dmr handheld digital">
             <div class="product-img-wrapper">
                 <img src="D168.png" alt="AT-D168">
@@ -369,6 +378,7 @@
             </div>
         </div>
 
+        <!-- 6. AT-D878S -->
         <div class="product-card" data-model="at-d878s atd878s at-878s at878s 878s 878 87 8 dmr digital">
             <div class="product-img-wrapper">
                 <img src="878s.jpg" alt="AT-D878S">
@@ -383,6 +393,7 @@
             </div>
         </div>
 
+        <!-- 7. AT-5100 -->
         <div class="product-card" data-model="at-5100 at5100 5100 510 51 5 mobile radio vehicle">
             <div class="product-img-wrapper">
                 <img src="5100.jpg" alt="AT-5100">
@@ -397,6 +408,7 @@
             </div>
         </div>
 
+        <!-- 8. AT-5289Ⅱ -->
         <div class="product-card" data-model="at-5289ii at5289ii 5289ii 5289 ii 2 52892 cb radio mobile">
             <div class="product-img-wrapper">
                 <img src="5289Ⅱ.jpg" alt="AT-5289Ⅱ">
@@ -411,6 +423,7 @@
             </div>
         </div>
 
+        <!-- 9. AT-518PLUS -->
         <div class="product-card" data-model="at-518plus at518 518plus 518 51 5 v5 gmrs frs handheld">
             <div class="product-img-wrapper">
                 <img src="518plus.png" alt="AT-518PLUS">
@@ -425,6 +438,7 @@
             </div>
         </div>
 
+        <!-- 10. AT-518PLUS-4PACK -->
         <div class="product-card" data-model="at-518plus-4pack 518plus 4pack 4 pack multi gmrs frs v5">
             <div class="product-img-wrapper">
                 <img src="518plus-4pack.png" alt="AT-518PLUS 4-PACK">
@@ -438,6 +452,7 @@
             </div>
         </div>
 
+        <!-- 11. AT-B3 -->
         <div class="product-card" data-model="at-b3 atb3 b3 b 3 handheld radio wireless">
             <div class="product-img-wrapper">
                 <img src="AT-B3.jpg" alt="AT-B3">
@@ -451,6 +466,7 @@
             </div>
         </div>
 
+        <!-- 12. SUPER-PTT -->
         <div class="product-card" data-model="super-ptt superptt ptt super mic accessory button">
             <div class="product-img-wrapper">
                 <img src="superptt.png" alt="SUPER-PTT">
@@ -464,6 +480,7 @@
             </div>
         </div>
 
+        <!-- 13. AT-500MⅡ -->
         <div class="product-card" data-model="at-500mii at500mii 500mii 500 mii 500m2 500m mobile radio">
             <div class="product-img-wrapper">
                 <img src="500mⅡ.jpg" alt="AT-500MⅡ">
@@ -477,10 +494,12 @@
             </div>
         </div>
 
+        <!-- 动态未匹配提示区 -->
         <div class="no-results" id="noResults">✨ No matching models found. Try checking the number!</div>
 
     </div>
 
+    <!-- 🧠 稳健的高效动态检索算法 -->
     <script>
         function filterProducts() {
             var input = document.getElementById('searchInput');
